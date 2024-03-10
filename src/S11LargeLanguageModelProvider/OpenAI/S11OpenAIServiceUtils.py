@@ -1,8 +1,7 @@
-from typing import Tuple
 import requests
 from requests import Response
 
-from ..LargeLanguageModelService import EXPERT, PROMPT, ACCESS, FULL_ACCESS, MEDICAL_EXPERT, NUTRITION_EXPERT, EXERCISE_EXPERT, MENTAL_HEALTH_EXPERT, SAPIEN_ELEVEN_EXPERT, API_KEY
+from src.S11LargeLanguageModelProvider.LargeLanguageModelService import EXPERT, PROMPT, ACCESS, FULL_ACCESS, MEDICAL_EXPERT, NUTRITION_EXPERT, EXERCISE_EXPERT, MENTAL_HEALTH_EXPERT, SAPIEN_ELEVEN_EXPERT, API_KEY
 
 # TODO: Implement this as a builder class
 

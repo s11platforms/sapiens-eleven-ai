@@ -1,9 +1,5 @@
-from typing import Tuple
-
-import requests
-import json
-from ..LargeLanguageModelService import LargeLanguageModelService
-from OpenAIServiceUtils import execute_chat_completions_api_request
+from src.S11LargeLanguageModelProvider.LargeLanguageModelService import LargeLanguageModelService
+from S11OpenAIServiceUtils import execute_chat_completions_api_request
 
 class OpenAIService(LargeLanguageModelService):
 
