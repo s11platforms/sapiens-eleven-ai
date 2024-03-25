@@ -1,0 +1,48 @@
+@startuml
+class S11LargeLanguageModelService {
+    - prompt: str
+    - user: dict
+    - provider: S11LargeLanguageModelProvider
+    - initial_request_time: str
+    - final_request_time: str
+    - request_time: str
+    - response_time: str
+    - api_key: str
+    - access: str
+    - expert: str
+    - request_payload: dict
+    - answer: str
+    - input_token_usage: int
+    - output_token_usage: int
+    - usage_cost: float
+    - database_service: S11DatabaseService
+    + __init__(payload: dict)
+    + get_response() : dict
+}
+
+class S11DatabaseService {
+}
+
+class S11LargeLanguageModelProvider {
+}
+
+class S11RAGProvider {
+}
+
+class S11FunctionCallProvider {
+}
+
+class S11ResponseBuilder {
+}
+
+class S11LargeLanguageModelServiceUtils {
+}
+
+S11LargeLanguageModelService --> S11DatabaseService : uses to store and get information
+S11LargeLanguageModelService --> S11LargeLanguageModelProvider : uses to get response from OpenAI
+S11LargeLanguageModelService --> S11RAGProvider : uses to add useful information to a prompt
+S11LargeLanguageModelService --> S11FunctionCallProvider : uses to identify and execute functinos
+S11LargeLanguageModelService --> S11ResponseBuilder : uses to build response and handle multi-step processing
+S11LargeLanguageModelService --> S11LargeLanguageModelServiceUtils : uses to validate data and make sure everything is ok before we start the process
+
+@enduml

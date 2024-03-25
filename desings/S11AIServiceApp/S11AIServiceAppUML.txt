@@ -1,0 +1,18 @@
+@startuml
+
+!theme plain
+
+participant Client
+entity "Flask App" as FlaskApp
+control "/generate Route" as GenerateRoute
+entity "S11LargeLanguageModelService" as S11Service
+
+Client -> FlaskApp: POST /generate\n(JSON payload)
+FlaskApp -> GenerateRoute: Handle Request
+GenerateRoute -> S11Service: Initialize with payload
+S11Service -> GenerateRoute: Generate response
+GenerateRoute -> Client: Return response
+
+note right of S11Service: Exception handling\nreturns error 500 if fails
+
+@enduml
